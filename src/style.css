@@ -4,4 +4,9 @@
     align-items: center;
     width: auto;
     height: 100vh;
+    flex-direction: column;
+}
+
+button{
+    margin-top: 10px;
 }

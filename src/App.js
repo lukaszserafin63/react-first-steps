@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react'
 import './style.css';
-import Button from './components/button';
-import Input from './components/input';
-
 const App = () => {
-
+  const [todos,setTodos] = useState([]);
+  const [todo,setTodo] = useState("");
+  function addToTodoList(){
+    setTodos([...todos,{"id":Date.now(),"todo":todo}])
+    setTodo("")
+    console.log(todos)
+  }
   return (
-    <div  className='main'>
-      <h1>ToDoLista</h1>
-    <Button></Button>  
-    <Input></Input>
+    <div className='main'>
+      <input type="text" onChange={(e)=>setTodo(e.target.value)} value={todo} />
+      <button onClick={()=>addToTodoList()}>Dodaj</button>
+      {todos.map((todo)=>{
+        return <p key={todo.id}>{todo.todo}</p>
+      })}
     </div>
   )
 }
