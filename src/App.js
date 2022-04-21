@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './style.css';
+import Button from './components/button';
+import Input from './components/input';
 
 const App = () => {
-  const getRandomNumber =()=>{
-    setNumber(Math.round(Math.random()*2137));
-  } 
-  const [sentence,setSentence]= useState("que");
-  const [number,setNumber] = useState(2137);
+
   return (
-    <div>
-      <h1>jelo mordo jestem leszek</h1>
-      {number}
-      <button onClick={()=>getRandomNumber()}>JEBAC KOLARZA</button>
-    <input type="number" value={sentence} onChange={(e)=>setSentence(e.target.value)} />
-    <h1>{sentence}</h1>
+    <div  className='main'>
+      <h1>ToDoLista</h1>
+    <Button></Button>  
+    <Input></Input>
     </div>
   )
 }
